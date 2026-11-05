@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/YOUR_GITHUB_USER/buzzard/actions/workflows/ci.yml"><img src="https://github.com/YOUR_GITHUB_USER/buzzard/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://github.com/YOUR_GITHUB_USER/buzzard/releases"><img src="https://img.shields.io/github/v/release/YOUR_GITHUB_USER/buzzard" alt="Release"></a>
+  <a href="https://github.com/Kanyefue/buzzard/actions/workflows/ci.yml"><img src="https://github.com/Kanyefue/buzzard/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/Kanyefue/buzzard/releases"><img src="https://img.shields.io/github/v/release/KanyefueR/buzzard" alt="Release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license"></a>
   <img src="https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=white" alt="Arch Linux">
   <img src="https://img.shields.io/badge/written%20in-Rust-orange?logo=rust" alt="Rust">
@@ -119,7 +119,7 @@ buzzard setup
 <details>
 <summary><b>Prebuilt binary</b> (x86_64 and aarch64)</summary>
 
-Download the archive and its `.sha256` file from the [releases page](https://github.com/YOUR_GITHUB_USER/buzzard/releases), then:
+Download the archive and its `.sha256` file from the [releases page](https://github.com/Kanyefue/buzzard/releases), then:
 
 ```sh
 sudo pacman -S --needed base-devel git bubblewrap
@@ -135,7 +135,7 @@ buzzard setup
 
 ```sh
 sudo pacman -S --needed base-devel git bubblewrap rust
-git clone https://github.com/YOUR_GITHUB_USER/buzzard && cd buzzard
+git clone https://github.com/Kanyefue/buzzard && cd buzzard
 cargo build --release --locked
 sudo install -m755 target/release/buzzard /usr/local/bin/buzzard
 buzzard setup
