@@ -1,0 +1,7 @@
+[Unit]
+Description=Buzzard: sort recent log warnings with Jev
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=buzzard --no-llm logs --since "1 hour ago" --notify

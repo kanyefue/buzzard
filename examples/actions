@@ -1,0 +1,8 @@
+# Your own actions for "buzzard do".  Copy to: ~/.config/buzzard/actions
+# One per line:  name | description Jev matches against | shell command
+# A good description says what the action is FOR, in the words you would use.
+# Same name as a built-in action replaces it. List all with: buzzard actions
+
+restart-audio | Fix sound problems by restarting PipeWire | systemctl --user restart pipewire pipewire-pulse wireplumber
+restart-wifi  | Fix wifi or internet problems by restarting NetworkManager | sudo systemctl restart NetworkManager
+battery       | Show battery health and charge | upower -i "$(upower -e | grep -m1 BAT)"

@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Buzzard log triage every hour
+
+[Timer]
+OnCalendar=hourly
+RandomizedDelaySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

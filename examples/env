@@ -1,0 +1,7 @@
+# Copy to ~/.config/buzzard/env and run: chmod 600 ~/.config/buzzard/env
+# Buzzard reads this file itself; values already set in your shell win.
+TYPESAFE_API_KEY=your_key_here
+# BUZZARD_LLM_MODEL=qwen3.5:4b
+# BUZZARD_LLM_URL=http://127.0.0.1:11434
+# BUZZARD_LLM_API=ollama
+# BUZZARD_LLM_THINK=0

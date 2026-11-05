@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Buzzard logo">
+  <title>Buzzard</title>
+  <defs>
+    <!-- the bird is clipped to the shield, so it joins the outline -->
+    <clipPath id="inner">
+      <path d="M128 16 C162 30 196 38 224 40 V120 C224 180 184 222 128 242 C72 222 32 180 32 120 V40 C60 38 94 30 128 16 Z"/>
+    </clipPath>
+    <!-- details are cut out of the bird, so they stay transparent -->
+    <mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="256" height="256">
+      <rect width="256" height="256" fill="#fff"/>
+      <g transform="translate(-14 -10)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+        <!-- eye under a heavy brow -->
+        <path d="M158 113 C162 106 176 104 184 109 C182 118 168 122 158 113 Z" fill="#000" stroke="none"/>
+        <path d="M144 101 C160 96 180 98 198 106" stroke-width="4.5"/>
+        <!-- cere / beak edge and nostril -->
+        <path d="M199 101 C195 109 192 117 192 127" stroke-width="4"/>
+        <ellipse cx="204" cy="111" rx="3.2" ry="2.2" fill="#000" stroke="none"/>
+        <!-- gape -->
+        <path d="M182 138 C189 132 198 131 206 133" stroke-width="5"/>
+      </g>
+    </mask>
+  </defs>
+
+  <!-- shield outline -->
+  <path d="M128 16 C162 30 196 38 224 40 V120 C224 180 184 222 128 242 C72 222 32 180 32 120 V40 C60 38 94 30 128 16 Z"
+        fill="none" stroke="#22E35C" stroke-width="12" stroke-linejoin="round"/>
+
+  <!-- buzzard head -->
+  <g clip-path="url(#inner)">
+    <g mask="url(#cut)">
+      <path transform="translate(-14 -10)" fill="#22E35C" d="M30 262
+        C58 232 74 212 80 194 L76 189
+        C79 175 83 164 90 156 L82 151
+        C89 132 98 118 110 106
+        C126 92 144 85 162 84
+        C178 84 190 90 198 100
+        C208 103 215 111 216 121
+        C217 131 214 139 208 144
+        C208 138 205 134 200 133
+        C194 132 188 134 183 137
+        C180 168 172 192 164 212
+        C158 228 160 246 170 262 Z"/>
+    </g>
+  </g>
+</svg>

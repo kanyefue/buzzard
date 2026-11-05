@@ -1,0 +1,12 @@
+# Custom commands for Buzzard.  Copy to: ~/.config/buzzard/commands
+# Format:  name = <buzzard command>     → runs "buzzard <buzzard command> <your arguments>"
+#          name = !<shell command>      → runs in sh; your arguments are in "$@"
+# Built-in commands (install, check, search, upgrade, audit, commands) cannot be overridden.
+
+get       = install
+review    = check
+find      = search
+update    = upgrade
+music     = install apple music
+cleanup   = !sudo pacman -Rns $(pacman -Qdtq)
+info      = !pacman -Qi "$@"

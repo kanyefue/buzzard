@@ -1,0 +1,8 @@
+post_install() {
+  echo "==> Run 'buzzard setup' to add your TypeSafe API key and set up the local LLM."
+  echo "    It detects NVIDIA and AMD GPUs and installs the matching Ollama build."
+}
+
+post_upgrade() {
+  :
+}

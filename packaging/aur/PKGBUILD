@@ -1,0 +1,47 @@
+# Maintainer: YOUR NAME <you at example dot org>
+pkgname=buzzard
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="AUR helper that reviews every package with rules, the Jev decision model and a sandbox before installing it"
+arch=('x86_64' 'aarch64')
+url="https://github.com/YOUR_GITHUB_USER/buzzard"
+license=('MIT')
+install=buzzard.install
+depends=('pacman' 'git' 'bubblewrap' 'sudo' 'gcc-libs' 'glibc')
+makedepends=('cargo')
+optdepends=('ollama: local LLM second opinion'
+            'libnotify: desktop notifications for buzzard logs --notify'
+            'pacman-contrib: paccache for the clean-pkg-cache action'
+            'reflector: refresh-mirrors action')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+# After tagging the release, run `updpkgsums` to fill this in.
+sha256sums=('REPLACE_WITH_UPDPKGSUMS')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+  cargo build --frozen --release
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo test --frozen
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 target/release/buzzard "$pkgdir/usr/bin/buzzard"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 examples/* -t "$pkgdir/usr/share/doc/$pkgname/examples/"
+  install -Dm644 contrib/systemd/buzzard-logs.service contrib/systemd/buzzard-logs.timer \
+    -t "$pkgdir/usr/lib/systemd/user/"
+}
